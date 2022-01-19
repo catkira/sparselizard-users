@@ -12,13 +12,13 @@ def find_stubs(package):
 
 
 setup(
-    name='spylizard_stubs',
+    name='spylizardstubs',
     maintainer="spylizard Developers",
     maintainer_email="example@python.org",
     description="PEP 561 type stubs for spylizard",
     version='1.0',
-    packages=['spylizard_stubs'],
-    package_dir={'spylizard_stubs':'.'},
+    packages=['spylizardstubs'],
+    package_dir={'spylizardstubs':'.'},
     include_package_data = True,
     # PEP 561 requires these
     package_data={"": ["*.py"]},
