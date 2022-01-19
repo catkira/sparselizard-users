@@ -1,6 +1,6 @@
 # Thanks to H. Badi for bringing sparselizard python bindings to the project.
 
-cmake_minimum_required(VERSION 3.10)
+cmake_minimum_required(VERSION 3.14)
 
 project(spylizard LANGUAGES CXX VERSION 1.0 DESCRIPTION "sparselizard python wrapper")
 set(CMAKE_CXX_STANDARD 11)
@@ -78,6 +78,8 @@ add_library(spylizard SHARED
 #find_library(SPARSELIZARD_LIBRARY NAMES libsparselizard.so ${SPARSELIZARD_DIR})
 
 SET_TARGET_PROPERTIES(spylizard PROPERTIES PREFIX "")
-target_link_libraries(spylizard sparselizard gmsh petsc slepc)
+target_link_libraries(spylizard sparselizard petsc slepc)
 target_link_directories(spylizard PUBLIC ../../../sparselizard/build ${GMSH_DIR}/lib ${PETSC_DIR}/include ${PETSC_DIR}/${PETSC_ARCH}/lib)
-
+add_custom_command(TARGET spylizard
+                   POST_BUILD
+                   COMMAND ${CMAKE_COMMAND} -E copy $<TARGET_FILE:spylizard> "../package")
