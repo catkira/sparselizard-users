@@ -159,7 +159,6 @@ __all__ = [
     "spylizard",
     "sqrt",
     "strain",
-    "stubs",
     "sum",
     "t",
     "tan",

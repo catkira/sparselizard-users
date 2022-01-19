@@ -9,10 +9,11 @@ Build instructions:
 1. Build sparselizard-users/api/python with cmake as usual
 1. pip install .
 
-To update the stubs: (could be added to cmake later)
+To update the stubs: (only works if spylizard is already installed with pip)
 1. cd into api/python
 1. pip install pybind11-stubgen
 1. pybind11-stubgen --no-setup-py --root-module-suffix stubs -o package spylizard
+1. pip install -I .
 
 ---
 
