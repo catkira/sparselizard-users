@@ -11,5 +11,5 @@ setup(
     packages=['spylizard'],
     package_dir={'spylizard':'./package'},
     include_package_data = True,
-    package_data={"": ["stubs/__init__.pyi", "spylizard.so", "__init__.py"]},
+    package_data={"": ["spylizardstubs/__init__.pyi", "spylizard.so", "__init__.py"]},
 )

@@ -10,8 +10,9 @@ Build instructions:
 1. pip install .
 
 To update the stubs: (could be added to cmake later)
-1. pip install pybind11-stubgen
-2. pybind11-stubgen
+1. cd into api/python
+2. pip install pybind11-stubgen
+3. pybind11-stubgen --no-setup-py --root-module-suffix stubs -o package spylizard
 
 ---
 

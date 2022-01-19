@@ -1,2 +1,2 @@
-from spylizard.stubs import *
+from spylizard.spylizardstubs import *
 from spylizard.spylizard import *
