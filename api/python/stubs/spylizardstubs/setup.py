@@ -21,5 +21,5 @@ setup(
     package_dir={'spylizardstubs':'.'},
     include_package_data = True,
     # PEP 561 requires these
-    package_data={"": ["*.py"]},
+    package_data={"": ["*.pyi", "*.py"]},
 )
