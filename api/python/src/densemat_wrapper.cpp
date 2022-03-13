@@ -20,7 +20,16 @@ void init_densemat(py::module &m)
 
         .def("print", &densemat::print)
         .def("printsize", &densemat::printsize)
-        
+
+        .def("getvalues", [](densemat &self, py::list& values){
+                std::cout<<"running getvalues wrapper"<<std::endl;
+                const unsigned int numValues = self.count();
+                std::vector<double> valuesWrapped(numValues);
+                self.getvalues(valuesWrapped);
+                for(size_t index = 0; index < numValues; index++){
+                    values.append(valuesWrapped[index]);
+                }
+            }, py::arg("values"))
     ;
 }
 
