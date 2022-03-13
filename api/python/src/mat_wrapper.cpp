@@ -19,6 +19,8 @@ void init_mat(py::module &m)
         
         .def("getainds", &mat::getainds)
         .def("getdinds", &mat::getdinds)
+        .def("getavals", &mat::getainds)
+        .def("getdvals", &mat::getdinds)        
 
         .def("print", &mat::print)
         

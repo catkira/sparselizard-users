@@ -157,6 +157,7 @@ __all__ = [
     "spanningtree",
     "spline",
     "spylizard",
+    "spylizardstubs",
     "sqrt",
     "strain",
     "sum",
