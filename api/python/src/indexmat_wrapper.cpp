@@ -21,6 +21,16 @@ void init_indexmat(py::module &m)
         .def("print", &indexmat::print)
         .def("printsize", &indexmat::printsize)
         
+        .def("getvalues", [](indexmat &self){
+                std::cout<<"running getvalues wrapper"<<std::endl;
+                int *valptr = self.getvalues();
+                py::list values;               
+                const unsigned int numValues = self.count();
+                for(size_t index = 0; index < numValues; index++){
+                    values.append(valptr[index]);
+                }
+                return values;
+            })      
     ;
 }
 

@@ -30,6 +30,17 @@ void init_densemat(py::module &m)
                     values.append(valuesWrapped[index]);
                 }
             }, py::arg("values"))
+            
+        .def("getvalues", [](densemat &self){
+                std::cout<<"running getvalues wrapper"<<std::endl;
+                double *valptr = self.getvalues();
+                py::list values;               
+                const unsigned int numValues = self.count();
+                for(size_t index = 0; index < numValues; index++){
+                    values.append(valptr[index]);
+                }
+                return values;
+            })               
     ;
 }
 
