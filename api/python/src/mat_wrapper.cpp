@@ -10,6 +10,8 @@ void init_mat(py::module &m)
         .def(py::init<int, indexmat, indexmat, densemat>(), py::arg("matsize"), py::arg("rowaddresses"), py::arg("coladdresses"), py::arg("vals"))
         .def(py::init<formulation, indexmat, indexmat, densemat>(), py::arg("myformulation"), py::arg("rowaddresses"), py::arg("coladdresses"), py::arg("vals"))
         
+        .def("eliminate", &mat::eliminate, py::arg("vecb"))
+
         .def("countrows", &mat::countrows)
         .def("countcolumns", &mat::countcolumns)
 
